@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Container = styled.div`
 height:60px;
-background-color:#393E46;
+background-color:#010409;
 `
 
 const Wrapper = styled.div`
@@ -34,12 +34,15 @@ padding:10px 12px;
 const MenuItem = styled.button`
 font-size: 14px;
 cursor: pointer;
-background-color: #393E46;
+background-color: #010409;
 color:#EEEEEE;
 padding:20px 12px;
 border:none;
 &:hover {
-    background-color: #222831;
+    background-color: #31363F;
+    border-radius : 10px;
+    margin : 1px;
+    padding : 10px;
   }
 `
 

@@ -24,8 +24,9 @@ width:100vw;
 height:100vh;
 display:flex;
 align-items:center;
-background-color: #00adb5;
-background-image: url("https://www.transparenttextures.com/patterns/black-mamba.png");
+background-color: #000000;
+background-image: url("https://www.transparenttextures.com/patterns/fabric-of-squares.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 `
 
 
@@ -82,14 +83,14 @@ const Hero = () => {
                 <Slide>
                     <InfoContainer>
                         <Title>
-                        Online test and quiz maker
+                            Online test and quiz maker
                         </Title>
                         <Description>
-                        Create, send and analyze your tests, quizzes and assessments for free with OEM
+                            Create, send and analyze your tests, quizzes and assessments for free with OEM
                         </Description>
                         <Button>
-                            <Link to="/register" style={{ textDecoration: "none", color:"#EEEEEE"}}>
-                            Get Started for Free  &gt;&gt;
+                            <Link to="/register" style={{ textDecoration: "none", color: "#EEEEEE" }}>
+                                Get Started for Free  &gt;&gt;
                             </Link>
                         </Button>
                     </InfoContainer>
