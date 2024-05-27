@@ -20,6 +20,11 @@ display:flex;
 flex-directiction:column;
 justify-content:center;
 align-items:center;
+transition: transform 0.2s ease-in-out; /* Smooth transition for the transform property */
+
+&:hover {
+  transform: scale(1.2); /* Enlarge the image on hover */
+}
 `
 const Info = styled.div`
 display:flex;
@@ -55,21 +60,21 @@ const Introducing = () => {
                 <Section>
                     <Info>
                         <Image><Public /></Image>
-                        <Title>Access anywhere</Title>
+                        <Title> <u> Access anywhere</u></Title>
                         <Description>Being online allows you and your respondents to access, administer and take your quizzes from anywhere at anytime.</Description>
                     </Info>
                 </Section>
                 <Section>
                     <Info>
                         <Image><Lock /></Image>
-                        <Title>Secured with SSL</Title>
+                        <Title> <u>   Secured with SSL </u> </Title>
                         <Description>With SSL encryption and utilising our advanced cloud infrastructure you can be sure your tests will always be secure.</Description>
                     </Info>
                 </Section>
                 <Section>
                     <Info>
                         <Image><Check /></Image>
-                        <Title>Auto-grading</Title>
+                        <Title> <u>Auto-grading</u> </Title>
                         <Description>OEM can automatically grade your assessments, saving you the time.</Description>
                     </Info>
                 </Section>
@@ -78,21 +83,21 @@ const Introducing = () => {
                 <Section>
                     <Info>
                         <Image><AccessTime /></Image>
-                        <Title>Timed tests</Title>
-                        <Description>With OEM it is easy to set a time limit.</Description>
+                        <Title> <u>Timed tests</u> </Title>
+                        <Description>With QuizBlitz, It is easy to set a time limit.</Description>
                     </Info>
                 </Section>
                 <Section>
                     <Info>
                         <Image><FlashOn /></Image>
-                        <Title>Custom Tests</Title>
-                        <Description>With OEM you can customize your tests easily</Description>
+                        <Title> <u>Custom Tests</u> </Title>
+                        <Description>With QuizBlitz, You can customize your tests very easily.</Description>
                     </Info>
                 </Section>
                 <Section>
                     <Info>
                         <Image><Recommend /></Image>
-                        <Title>7/24 live support</Title>
+                        <Title>    <u>24/7 Live Support</u> </Title>
                         <Description>Being online allows you and your respondents to access, administer and take your quizzes from anywhere at anytime.</Description>
                     </Info>
                 </Section>

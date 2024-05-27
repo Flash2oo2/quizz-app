@@ -1,106 +1,128 @@
-import React from 'react'
-import styled from 'styled-components'
+import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 const Container = styled.div`
-width:100%;
-height:100vh;
-display:flex;
-position:relative;
-overflow:hidden; 
-
-`
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+`;
 
 const Wrapper = styled.div`
-height:100%;
-display:flex;
-
-`
-
-
+  height: 100%;
+  display: flex;
+`;
 
 const Slide = styled.div`
-width:100vw;
-height:100vh;
-display:flex;
-align-items:center;
-background-color: #000000;
-background-image: url("https://www.transparenttextures.com/patterns/fabric-of-squares.png");
-/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
-`
-
-
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: #000000;
+  background-image: url("https://www.transparenttextures.com/patterns/fabric-of-squares.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+`;
 
 const ImgContainer = styled.div`
-height:100%;
-flex:1;
-`
+  height: 100%;
+  flex: 1;
+`;
 
 const Image = styled.img`
-height:80%;
-`
-
-
+  height: 80%;
+`;
 
 const Title = styled.h1`
-font-size:70px;
-color:#EEEEEE;
-margin-left:5%;
-`
+  font-size: 70px;
+  color: #eeeeee;
+  position: absolute;
+  top: 4%;
+  left: 5%;
+`;
 
 const InfoContainer = styled.div`
-flex:1;
-padding:50px;
+  flex: 1;
+  padding: 50px;
 `;
 
 const Description = styled.p`
-    margin:30px 0px;
-    font-size:32px;
-    font-weight:600;
-    letter-spacing:3px;
-    color:#EEEEEE;
-    margin-left:5%;
-`
+  margin: 30px 0px;
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: #eeeeee;
+  margin-left: 5%;
+`;
+
 const Button = styled.button`
-    padding:15px;
-    font-size:20px;
-    background-color:transparent;
-    cursor:pointer;
-    color:#EEEEEE;
-    background-color:#5cb85c;
-    border:none;
-    border-radius:15px;
-    margin-left:5%;
-    &:hover {
-        background-color: #75DB75;
-      }
-`
+  padding: 15px;
+  font-size: 20px;
+  background-color: transparent;
+  cursor: pointer;
+  color: #eeeeee;
+  background-color: #5cb85c;
+  border: none;
+  border-radius: 15px;
+  margin-left: 5%;
+  &:hover {
+    background-color: #75db75;
+  }
+`;
 
 const Hero = () => {
-    return (
-        <Container>
-            <Wrapper>
-                <Slide>
-                    <InfoContainer>
-                        <Title>
-                            Online test and quiz maker
-                        </Title>
-                        <Description>
-                            Create, send and analyze your tests, quizzes and assessments for free with OEM
-                        </Description>
-                        <Button>
-                            <Link to="/register" style={{ textDecoration: "none", color: "#EEEEEE" }}>
-                                Get Started for Free  &gt;&gt;
-                            </Link>
-                        </Button>
-                    </InfoContainer>
-                    <ImgContainer>
-                        <Image src="https://i.ibb.co/9sCCj2b/exam.png" />
-                    </ImgContainer>
-                </Slide>
-            </Wrapper>
-        </Container>
-    )
-}
+  const [text, setText] = useState('');
+  const [isErasing, setIsErasing] = useState(false);
+  const [textIndex, setTextIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+  const messages = ['Online Test Maker', 'Build Quizzes For Free!'];
 
-export default Hero
+  useEffect(() => {
+    if (charIndex < messages[textIndex].length && !isErasing) {
+      setTimeout(() => {
+        setText(prev => prev + messages[textIndex].charAt(charIndex));
+        setCharIndex(charIndex + 1);
+      }, 150);
+    } else if (charIndex > 0 && isErasing) {
+      setTimeout(() => {
+        setText(messages[textIndex].substring(0, charIndex - 1));
+        setCharIndex(charIndex - 1);
+      }, 100);
+    } else if (charIndex === messages[textIndex].length && !isErasing) {
+      setTimeout(() => {
+        setIsErasing(true);
+      }, 2000);
+    } else if (charIndex === 0 && isErasing) {
+      setIsErasing(false);
+      setTextIndex((textIndex + 1) % messages.length);
+    }
+  }, [charIndex, isErasing, textIndex, messages]);
+
+  return (
+    <Container>
+      <Wrapper>
+        <Slide>
+          <InfoContainer>
+            <Title>
+              {text}
+            </Title>
+            <Description>
+              Create, Upload and Analyze Tests, Quizzes and Assessments for free with QuizBlitz!
+            </Description>
+            <Button>
+              <Link to="/register" style={{ textDecoration: "none", color: "#EEEEEE" }}>
+                Get Started for Free  &gt;&gt;
+              </Link>
+            </Button>
+          </InfoContainer>
+          <ImgContainer>
+            <Image src="https://i.ibb.co/9sCCj2b/exam.png" />
+          </ImgContainer>
+        </Slide>
+      </Wrapper>
+    </Container>
+  );
+};
+
+export default Hero;

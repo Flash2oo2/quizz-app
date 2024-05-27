@@ -4,8 +4,9 @@ import {features} from '../Data'
 
 const Container = styled.div`
     display:flex;
-    padding:20px;
+    padding:10px;
     justify-content:space-between;
+
 `;
 
 const Features = () => {

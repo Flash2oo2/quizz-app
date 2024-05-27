@@ -59,6 +59,19 @@ margin-right:10%;
 margin-left:25px;
 cursor: pointer;
 border:none;
+background-color:#0275d8;
+color:#EEEEEE;
+padding:10px 20px;
+border-radius:50px;
+&:hover {
+    background-color: #228CE9;
+  }
+`
+
+const MenuItemSecond = styled.div`
+margin-left:25px;
+cursor: pointer;
+border:none;
 background-color:#5cb85c;
 color:#EEEEEE;
 padding:10px 20px;
@@ -68,30 +81,24 @@ border-radius:50px;
   }
 `
 
-const MenuItemSecond = styled.div`
-margin-left:25px;
-cursor: pointer;
-border:none;
-background-color:#0275d8;
-color:#EEEEEE;
-padding:10px 20px;
-border-radius:5px;
-&:hover {
-    background-color: #228CE9;
-  }
-`
-
 
 const Navbar = () => {
     return (
         <Container>
             <Wrapper>
                 <Left>
-                    <Logo>OEM</Logo>{/*online exam maker*/}
+                
+                    <Logo>
+                        <img src="https://i.ibb.co/0mr4nf1/quizblit-high-resolution-logo-transparent-2.png" 
+                       width="140" alt="quizblit-high-resolution-logo-transparent-2" border="0" />
+                        </Logo>{/*online exam maker*/}
                     <Link to="/">
                         <MenuItem>Home</MenuItem>
                     </Link>
-                    <MenuItem>Features</MenuItem>
+                    {/* <Link to="/Features"> */}
+                        <MenuItem>Features</MenuItem>
+                    {/* </Link> */}
+                    
                     <Link to="/help">
                         <MenuItem>Help</MenuItem>
                     </Link>

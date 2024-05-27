@@ -12,9 +12,15 @@ const Section = styled.div`
    height:60vh;
 `
 const Image = styled.div`
-margin-left:22%;
+padding-left:20%;
+padding-bottom : 18%;
 width:40%;
 height:40%;
+transition: transform 0.2s ease-out; /* Smooth transition for the transform property */
+
+&:hover {
+  transform: scale(1.1); /* Enlarge the image on hover */
+}
 `
 const Info = styled.div`
     margin-top:-100px;
@@ -47,7 +53,7 @@ border-bottom:3px solid #393E46;
 const QuickInfo = () => {
     return (
         <>
-            <WhoUsesTitle>Who uses <b>OEM</b></WhoUsesTitle>
+            <WhoUsesTitle>Who uses <b>QuizBlitz</b></WhoUsesTitle>
             <Container>
                 <Section>
                     <Image><Person style={{ fontSize: "200px", color: "#393E46" }} /></Image>

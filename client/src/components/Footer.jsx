@@ -12,7 +12,9 @@ flex-direction: column;
 padding: 20px;
 margin-left:6%;
 `;
-const Logo = styled.h1``;
+const Logo = styled.h1`
+margin-left : 16px;
+`;
 const Description = styled.p`
 margin: 20px 0px;
 `;
@@ -65,19 +67,19 @@ const Footer = () => {
     return (
         <Container>
             <Left>
-                <Logo>OEM</Logo>
+                <Logo>QuizBlitz</Logo>
                 <Description>
-                    Hey some small talk i made this quiz maker site before and now i am remastering it. I hope you guys like it. If you want to give a feedback you can contact me with my social media accounts witch i linked below and mail is valid contact way too thanks for all the attention have a nice day.
+                   
                 </Description>
                 <SocialContainer>
                     <SocialIcon color="55ACEE">
-                        <a href="https://www.linkedin.com/in/mert-s%C3%BCha-iga%C3%A7-988b3b238/"><LinkedIn /></a>
+                        <a href="#"><LinkedIn /></a>
                     </SocialIcon>
                     <SocialIcon color="222831">
-                        <a href="https://github.com/MadonisP"><GitHub /></a>
+                        <a href="#"><GitHub /></a>
                     </SocialIcon>
                     <SocialIcon color="E60023">
-                        <a href="https://www.youtube.com/channel/UCMrlNRGicIRlf-aISM10Ccw/videos"><YouTube /></a>
+                        <a href="#"><YouTube /></a>
                     </SocialIcon>
                 </SocialContainer>
             </Left>
@@ -92,14 +94,14 @@ const Footer = () => {
                 </List>
             </Center>
             <Right>
-                <Title>Contact</Title>
+                <Title>Contact Us</Title>
                 <ContactItem>
                     <Room style={{ marginRight: "10px" }} />
-                    Turkey
+                    India
                 </ContactItem>
                 <ContactItem>
                     <MailOutline style={{ marginRight: "10px" }} />
-                    mertsuhaigac@outlook.com
+                    xyz@gmail.com
                 </ContactItem>
                 <Payment src="https://i.ibb.co/Qfvn4z6/payment.png" />
             </Right>
