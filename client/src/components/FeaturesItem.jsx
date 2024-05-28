@@ -2,8 +2,10 @@ import styled from 'styled-components'
 
 const Container =styled.div`
    flex:1;
-   margin:25px;
+   margin-top:25px;
    height:60vh;
+
+  
 `
 const Image =styled.img`
 margin-left:110px;
@@ -12,6 +14,14 @@ height:40%;
 border:1px solid white;
 border-radius:50%;
 object-fit:cover;
+transition: transform 0.2s ease-in-out; /* Smooth transition for the transform property */
+
+&:hover {
+  transform: scale(1.2); /* Enlarge the image on hover */
+}
+
+
+
 `
 const Info =styled.div`
     margin-top:-100px;
