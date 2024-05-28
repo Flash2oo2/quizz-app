@@ -17,15 +17,25 @@ const Wrapper = styled.div`
 `;
 
 
+const rotateslide = keyframes`   
+   0% { background-position: 0 0; }
+  100% { background-position: -100% 0; }
+`;
+
+
 
 const Slide = styled.div`
   width: 100vw;
   height: 100vh;
   display: flex;
   align-items: center;
-  background-color: #000000;
-  background-image: url("https://www.transparenttextures.com/patterns/fabric-of-squares.png");
-  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  background-color: #03001a;
+  background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+  background-repeat: repeat-x;
+  animation: ${rotateslide} 15s linear infinite;
+  overflow: hidden;
+
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 `;
 
 const ImgContainer = styled.div`
@@ -41,7 +51,7 @@ const Title = styled.h1`
   font-size: 70px;
   color: #eeeeee;
   position: absolute;
-  top: 4%;
+  top: 20%;
   left: 5%;
 `;
 

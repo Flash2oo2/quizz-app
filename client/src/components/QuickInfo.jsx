@@ -24,6 +24,7 @@ transition: transform 0.2s ease-out; /* Smooth transition for the transform prop
 `
 const Info = styled.div`
     margin-top:-100px;
+    margin-left:-30px;
     width:100%;
     height:100%;
     display:flex;
